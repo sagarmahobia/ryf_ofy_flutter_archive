@@ -2,25 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:youthopportunities/screens/home/categories/category-widget.dart';
 import 'package:youthopportunities/screens/home/opportunities/opportunity-home-widget.dart';
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-  final String title;
+class MyHomePage extends StatelessWidget {
+  var title;
 
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
+  MyHomePage(this.title);
 
-class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: <Widget>[
+          IconButton(icon: Icon(Icons.search)),
+        ],
         title: Container(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               Text(
-                widget.title,
+                title,
               ),
             ],
           ),

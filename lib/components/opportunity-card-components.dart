@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:youthopportunities/data/opportunities/opportunity-dto.dart';
-import 'package:youthopportunities/screens/opportunityviewer/opportunity-viewer-widget.dart';
+import 'package:youthopportunities/screens/opportunityviewer/opportunity-viewer-screen.dart';
 
 Widget getOpportunityCard(OpportunityDTO opportunity, BuildContext context) {
   return GestureDetector(
@@ -9,7 +9,7 @@ Widget getOpportunityCard(OpportunityDTO opportunity, BuildContext context) {
       Navigator.push(
         context,
         MaterialPageRoute(
-            builder: (context) => OpportunityViewerWidget(opportunity.id)),
+            builder: (context) => OpportunityViewerScreen(opportunity.id)),
       );
     },
     child: Container(
