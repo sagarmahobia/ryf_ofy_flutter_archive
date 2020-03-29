@@ -102,6 +102,13 @@ class OpportunityViewerScreen extends StatelessWidget {
         headerSliverBuilder: (context, value) {
           return [
             SliverAppBar(
+              floating: true,
+              snap: true,
+              title: Text(
+                data.title,
+                maxLines: 2,
+                style: TextStyle(color: Colors.white, fontSize: 12),
+              ),
               expandedHeight: 360,
               backgroundColor: Colors.black,
               leading: IconButton(
