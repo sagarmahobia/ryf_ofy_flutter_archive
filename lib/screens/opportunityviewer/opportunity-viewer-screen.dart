@@ -99,21 +99,83 @@ class OpportunityViewerScreen extends StatelessWidget {
       length: list.length,
       child: NestedScrollView(
         controller: controller,
-
         headerSliverBuilder: (context, value) {
           return [
-            SliverToBoxAdapter(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: <Widget>[
-                  Container(
-                    height: 180,
-                    child: Image(
-                      fit: BoxFit.cover,
-                      image: NetworkImage(data.image),
-                    ),
+            SliverAppBar(
+              expandedHeight: 360,
+              backgroundColor: Colors.black,
+              leading: IconButton(
+                icon: Icon(
+                  Icons.arrow_back,
+                  color: Colors.white,
+                ),
+                onPressed: () {},
+              ),
+              flexibleSpace: FlexibleSpaceBar(
+                /*title: Text(
+                  data.title,
+                  style: TextStyle(
+                    color: Colors.white,
+                    
+                    fontSize: 12,
                   ),
-                ],
+                ),*/
+                background: ColoredBox(
+                  color: Colors.white,
+                  child: Column(
+                    children: <Widget>[
+                      Container(
+                        child: Image(
+                          height: 180,
+                          fit: BoxFit.cover,
+                          image: NetworkImage(data.image),
+                        ),
+                      ),
+                      Align(
+                        alignment: Alignment.topLeft,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            data.opportunityType + " | " + data.region,
+                          ),
+                        ),
+                      ),
+                      Align(
+                        alignment: Alignment.topLeft,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            data.title,
+                            style: TextStyle(fontSize: 22),
+                          ),
+                        ),
+                      ),
+                      Row(
+                        children: <Widget>[
+                          Expanded(
+                              child: Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Text(data.fundingType),
+                          )),
+                          Expanded(
+                              child: Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Text("Deadline: " + data.deadline),
+                          ))
+                        ],
+                      ),
+                      Align(
+                        alignment: Alignment.topLeft,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            "Time Left: " + data.timeLeft,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ),
           ];
