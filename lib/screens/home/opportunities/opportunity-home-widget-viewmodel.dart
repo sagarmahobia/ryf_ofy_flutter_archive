@@ -1,7 +1,5 @@
 import 'dart:async';
 
-import 'package:youthopportunities/data/categories/categories-dto.dart';
-import 'package:youthopportunities/data/opportunities/opportunity-dto.dart';
 import 'package:youthopportunities/services/opportunity-service.dart';
 import 'package:youthopportunities/utilitities/response-model.dart';
 

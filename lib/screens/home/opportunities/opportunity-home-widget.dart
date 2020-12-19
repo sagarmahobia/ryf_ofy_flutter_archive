@@ -4,7 +4,6 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:youthopportunities/components/opportunity-card-components.dart';
 import 'package:youthopportunities/data/opportunities/opportunity-dto.dart';
-import 'package:youthopportunities/services/opportunity-service.dart';
 import 'package:youthopportunities/utilitities/response-model.dart';
 
 import 'opportunity-home-widget-viewmodel.dart';
